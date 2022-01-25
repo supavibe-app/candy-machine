@@ -184,11 +184,11 @@ export const getCandyMachineState = async (
       isSoldOut: itemsRemaining === 0,
       isActive:
         (presale ||
-          state.data.goLiveDate.toNumber() < new Date().getTime() / 1000) &&
-        (state.endSettings
-          ? state.endSettings.endSettingType.date
-            ? state.endSettings.number.toNumber() > new Date().getTime() / 1000
-            : itemsRedeemed < state.endSettings.number.toNumber()
+          state.data.goLiveDate?.toNumber() < new Date().getTime() / 1000) &&
+        (state.data.endSettings
+          ? state.data.endSettings.endSettingType.date
+            ? state.data.endSettings.number.toNumber() > new Date().getTime() / 1000
+            : itemsRedeemed < state.data.endSettings.number.toNumber()
           : true),
       isPresale: presale,
       goLiveDate: state.data.goLiveDate,
